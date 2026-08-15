@@ -7,8 +7,8 @@ defmodule Scry.Engine.ArangoDB do
   (`Scry.DocGraph.Executor` -- one in-memory `%{path => rows}` space
   serving both document-tree and graph-node roles at once, plus a
   separate in-memory adjacency map) with genuine collection-and-AQL-
-  traversal-backed `DEEP`/`PARENT`/`SIBLINGS`/`ANCESTORS` (lang_spec.md
-  §8.3) *and* `VIA`/`PATH` (lang_spec.md §8.1) execution, each
+  traversal-backed `DEEP`/`PARENT`/`SIBLINGS`/`ANCESTORS` *and*
+  `VIA`/`PATH` execution, each
   independently nestable inside the other -- the document+graph
   composite kind's first real adapter, closing the one remaining kind
   package with a real fused executor and zero real-backend validation
@@ -72,7 +72,7 @@ defmodule Scry.Engine.ArangoDB do
   fix**: `OPTIONS { uniqueVertices: "path" }`, confirmed directly
   against a real cyclic graph to restore exact simple-path semantics,
   no manual `WHERE ALL(...)` filter construction needed at all.
-  `opts.shortest` (lang_spec.md §8.1) is *not* translated into any AQL
+  `opts.shortest` is *not* translated into any AQL
   `SHORTEST_PATH`/`K_SHORTEST_PATHS` construct -- both name a single
   target, not "shortest to every reachable node" (`VIA`'s own real
   semantics); instead, every simple path within `opts.hops` is fetched

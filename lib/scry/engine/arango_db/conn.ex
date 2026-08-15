@@ -3,7 +3,7 @@ defmodule Scry.Engine.ArangoDB.Conn do
   Wraps an `arangox` connection pid -- opened once via `open/1` and
   meant to be reused across many `Scry.Engine.ArangoDB.execute/3`
   calls, matching the connection/config struct every real adapter
-  exposes (impl_spec.md §2). `arangox` is `DBConnection`-based, the
+  exposes. `arangox` is `DBConnection`-based, the
   same supervised-reconnecting-process shape `postgrex`/`myxql`/`ch`/
   `mongodb_driver`/`boltx` already have in this family.
 

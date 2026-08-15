@@ -18,9 +18,8 @@ multi-model database with native document collections *and* native
 graph traversal (edge collections, AQL's own `FOR v, e, p IN min..max
 OUTBOUND/INBOUND ...` syntax) in one query language.
 
-Source: <https://github.com/joetjen/scry_engine_arangodb>. Specs live
-in the separate [`scry`](https://github.com/joetjen/scry) repository;
-the behaviour this implements lives in
+Source: <https://github.com/joetjen/scry_engine_arangodb>. The
+behaviour this implements lives in
 [`scry_core`](https://github.com/joetjen/scry_core).
 
 ## Usage
