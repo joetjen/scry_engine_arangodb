@@ -21,16 +21,10 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Checkout scry_core (path dependency)
-        uses: actions/checkout@v4
-        with:
-          repository: joetjen/scry_core
-          path: ../scry_core
+        run: git clone --depth 1 https://github.com/joetjen/scry_core.git ../scry_core
 
       - name: Checkout scry_docgraph (path dependency)
-        uses: actions/checkout@v4
-        with:
-          repository: joetjen/scry_docgraph
-          path: ../scry_docgraph
+        run: git clone --depth 1 https://github.com/joetjen/scry_docgraph.git ../scry_docgraph
 
       - name: Set up Elixir
         id: beam
